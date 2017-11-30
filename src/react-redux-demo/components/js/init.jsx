@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import ReactDom from 'react-dom';
+import Home from './containers/home';
 import '../css/init.less';
 
 /**
@@ -17,7 +18,9 @@ const store = createStoreWithMiddleware(reducer);
 class Init extends Component {
   render() {
     return (
-      <Provider store={store} />
+      <Provider store={store}>
+        <Home />
+      </Provider>
     );
   }
 }

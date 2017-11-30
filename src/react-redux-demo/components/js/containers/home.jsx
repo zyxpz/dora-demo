@@ -5,7 +5,7 @@ import { bindActionCreators } from 'redux';
 import * as creators from '../actions/home';
 import { connect } from 'react-redux';
 
-import '../css/Home.scss';
+// import '../css/Home.scss';
 
 class Container extends Component {
   constructor(props) {
@@ -21,7 +21,6 @@ class Container extends Component {
     this.props.actions.countReduce();
   }
   render() {
-    console.log(this.props, 77);
     return (
       <div>
         <span onClick={this.handleAdd}>+</span>
