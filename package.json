@@ -1,0 +1,30 @@
+{
+  "entry": {
+    "index": "./src/react-demo/entry/index.js",
+    "down": "./src/app/entry/app-down.js",
+    "app-redux": "./src/react-redux-demo/entry/app-redux.js"
+  },
+  "scripts": {
+    "start": "./node_modules/.bin/dora --plugins webpack,proxy",
+    "build": "./node_modules/atool-build/bin/atool-build",
+    "lint": "eslint ./src"
+  },
+  "devDependencies": {
+    "anima-yocto": "^2.0.2",
+    "atool-build": "^1.0.2",
+    "dora": "^0.4.5",
+    "dora-plugin-atool-build": "^0.4.1",
+    "dora-plugin-livereload": "^0.6.0",
+    "dora-plugin-proxy": "^0.8.5",
+    "dora-plugin-webpack": "^1.0.0",
+    "eslint": "^4.12.0",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
+    "react-redux": "^5.0.6",
+    "redux": "^3.7.2",
+    "redux-thunk": "^2.2.0"
+  },
+  "dependencies": {
+    "mockjs": "^1.0.1-beta3"
+  }
+}
