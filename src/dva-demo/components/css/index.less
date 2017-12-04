@@ -1,0 +1,14 @@
+.box {
+  width: 200px;
+  height: 200px;
+  margin: 0 auto;
+  text-align: center;
+  button {
+    margin-left: 20px;
+    background-color: blue;
+    &:not(:nth-of-type(2)) {
+      background-color: red;
+      margin-left: 0;
+    }
+  }
+}
