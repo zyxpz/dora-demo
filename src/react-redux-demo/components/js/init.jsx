@@ -15,14 +15,22 @@ const createStoreWithMiddleware = applyMiddleware(thunk)(createStore);
 const reducer = combineReducers(reducers);
 const store = createStoreWithMiddleware(reducer);
 
-class Init extends Component {
-  render() {
-    return (
-      <Provider store={store}>
-        <Home />
-      </Provider>
-    );
-  }
+// class Init extends Component {
+//   render() {
+//     return (
+//       <Provider store={store}>
+//         <Home />
+//       </Provider>
+//     );
+//   }
+// }
+
+function Init() {
+  return (
+    <Provider store={store}>
+      <Home />
+    </Provider>
+  );
 }
 
 ReactDom.render(

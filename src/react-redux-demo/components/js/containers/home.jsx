@@ -7,29 +7,42 @@ import { connect } from 'react-redux';
 
 // import '../css/Home.scss';
 
-class Container extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {};
-    this.handleAdd = this.handleAdd.bind(this);
-    this.handleReduce = this.handleReduce.bind(this);
-  }
-  handleAdd() {
-    this.props.actions.countAdd();
-  }
-  handleReduce() {
-    this.props.actions.countReduce();
-  }
-  render() {
-    return (
-      <div>
-        <span onClick={this.handleAdd}>+</span>
-        当前数字{this.props.home.count}
-        <span onClick={this.handleReduce}>-</span>
-      </div>
-    );
-  }
+// class Container extends Component {
+//   constructor(props) {
+//     super(props);
+//     this.state = {};
+//     this.handleAdd = this.handleAdd.bind(this);
+//     this.handleReduce = this.handleReduce.bind(this);
+//   }
+//   handleAdd() {
+//     this.props.actions.countAdd();
+//   }
+//   handleReduce() {
+//     this.props.actions.countReduce();
+//   }
+//   render() {
+//     return (
+//       <div>
+//         <span onClick={this.handleAdd}>+</span>
+//         当前数字{this.props.home.count}
+//         <span onClick={this.handleReduce}>-</span>
+//       </div>
+//     );
+//   }
+// }
+
+function Container(home) {
+  console.log(home);
+  return (
+    <div>
+      <span onClick={home.actions.countAdd}>+</span>
+      当前数字{home.home.count}
+      <span onClick={home.actions.countReduce}>-</span>
+    </div>
+  );
 }
+
+
 function mapStateToProps(state) {
   return {
     home: state.home
