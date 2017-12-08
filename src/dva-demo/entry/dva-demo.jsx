@@ -1,7 +1,7 @@
 import React from 'react';
 import dva from 'dva';
 import countModel from '../components/js/model/count';
-import  App  from '../components/js/view/count';
+import  App  from '../components/js/routes/count';
 
 const app = dva();
 
