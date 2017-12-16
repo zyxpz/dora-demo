@@ -11,11 +11,13 @@ export default {
   // Action 处理器，处理同步动作
   reducers: {
     add(state, action) {
+      console.log(state, action);
       return {
         value: state.value + 1
       };
     },
     minus(state, action) {
+      console.log(state);
       return {
         value: state.value - 1
       };
@@ -24,6 +26,10 @@ export default {
 
   // Action 处理器，处理异步动作
   effects: {
-
+    save: (state, action) => (
+      action.put({
+        type: 'minus'
+      })
+    )
   }
 }

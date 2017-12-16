@@ -17,7 +17,7 @@ function Count({ dispatch, value }) {
     <div className="box">
       <h1>{value}</h1>
       <button onClick={() => dispatch({ type: 'Count/add' })}>+</button>
-      <button onClick={() => dispatch({ type: 'Count/minus' })}>-</button>
+      <button onClick={() => dispatch({ type: 'Count/save' })}>-</button>
     </div>
   );
 }

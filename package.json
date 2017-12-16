@@ -13,7 +13,7 @@
   "devDependencies": {
     "anima-yocto": "^2.0.2",
     "atool-build": "^1.0.2",
-    "dora": "^0.4.5",
+    "dora": "^0.5.0",
     "dora-plugin-atool-build": "^0.4.1",
     "dora-plugin-livereload": "^0.6.0",
     "dora-plugin-proxy": "^0.8.5",
