@@ -1,4 +1,5 @@
 var webpack = require('atool-build/lib/webpack');
+var babelpolyfill = require("babel-polyfill");
 
 module.exports = function (webpackConfig) {
 
