@@ -4,6 +4,8 @@
  * effects redux-saga https://github.com/dvajs/dva-knowledgemap
  *                    http://leonshi.com/redux-saga-in-chinese/
  * 
+ * subscriptions  异步数据初始化
+ * 
  */
 import 'babel-polyfill';
 
@@ -48,7 +50,19 @@ export default {
         }
       })
     }
-  }
+  },
+  subscriptions: {
+    setup({ dispatch, history }) {
+      console.log(dispatch, history);
+      return history.listen(({ pathname, search }) => {
+        console.log(pathname, search);
+        // const query = queryString.parse(search);
+        // if (pathname === '/users') {
+        //   dispatch({ type: 'fetch', payload: query });
+        // }
+      });
+    },
+  },
 }
 
 function a({page}) {
