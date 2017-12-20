@@ -3,7 +3,8 @@
     "index": "./src/react-demo/entry/index.js",
     "down": "./src/app/entry/app-down.js",
     "app-redux": "./src/react-redux-demo/entry/app-redux.js",
-    "dva-demo": "./src/dva-demo/entry/index.js"
+    "dva-demo": "./src/dva-demo/entry/index.js",
+    "ts-demo": "./src/ts-demo/entry/ts-demo.ts"
   },
   "scripts": {
     "start": "./node_modules/.bin/dora --plugins webpack,proxy",
