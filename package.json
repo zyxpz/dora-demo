@@ -4,7 +4,8 @@
     "down": "./src/app/entry/app-down.js",
     "app-redux": "./src/react-redux-demo/entry/app-redux.js",
     "dva-demo": "./src/dva-demo/entry/index.js",
-    "ts-demo": "./src/ts-demo/entry/ts-demo.ts"
+    "ts-demo": "./src/ts-demo/entry/ts-demo.ts",
+    "ts-react": "./src/ts-react/entry/ts-react.tsx"
   },
   "scripts": {
     "start": "./node_modules/.bin/dora --plugins webpack,proxy",
@@ -12,6 +13,8 @@
     "lint": "eslint ./src"
   },
   "devDependencies": {
+    "@types/react": "^16.0.31",
+    "@types/react-dom": "^16.0.3",
     "anima-yocto": "^2.0.2",
     "atool-build": "^1.0.2",
     "babel-polyfill": "^6.26.0",
@@ -26,7 +29,8 @@
     "react-dom": "^16.2.0",
     "react-redux": "^5.0.6",
     "redux": "^3.7.2",
-    "redux-thunk": "^2.2.0"
+    "redux-thunk": "^2.2.0",
+    "tslint": "^5.8.0"
   },
   "dependencies": {
     "mockjs": "^1.0.1-beta3"
