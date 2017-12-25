@@ -1,3 +1,5 @@
+## add: tx-react
+- 配置tsconfig.json。
 ## 
 - add tx
 - 如ts报错，需在外层加一个tsconfig.json 为空对象即可。

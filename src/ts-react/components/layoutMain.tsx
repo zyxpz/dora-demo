@@ -4,11 +4,11 @@ import './layoutMain.less';
 
 export function LayoutMain<props, undefined>(props: any) {
   const handleAddClick = () => {
-    props.reduce(props.val + 1);
+    props.action(props.val + 1);
   }
 
   const handleReduceClick = () => {
-    props.reduce(props.val - 1);
+    props.action(props.val - 1);
   }
 
   return (

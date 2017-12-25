@@ -14,13 +14,7 @@ export class Init extends React.Component<InitProps, State> {
     }
   }
 
-  handleAdd = (val: number): void => {
-    this.setState({
-      val,
-    });
-  }
-
-  handleReduce = (val: number): void => {
+  handleAction = (val: number): void => {
     this.setState({
       val,
     });
@@ -32,8 +26,7 @@ export class Init extends React.Component<InitProps, State> {
         <h1>Hello from {this.props.compiler} and {this.props.framework}!</h1>
         <h2>{this.state.val}</h2>
         <LayoutMain
-          add={this.handleAdd}
-          reduce={this.handleReduce}
+          action={this.handleAction}
           val={this.state.val}
         />
       </div>
