@@ -12,12 +12,17 @@ import '../../css/index.less';
 // }
 
 // UI 组件
-function Count({ dispatch, value }) {
+function Count({ dispatch, value, ajaxData, asyncData }) {
   return (
     <div className="box">
       <h1>{value}</h1>
       <button onClick={() => dispatch({ type: 'Count/add' })}>+</button>
-      <button onClick={() => dispatch({ type: 'Count/save', payload: { page: 1 }  })}>-</button>
+      <button onClick={() => dispatch({ type: 'Count/save', payload: { page: 1 } })}>-</button>
+      <h1>{ajaxData && ajaxData.one}</h1>
+      <h1>{ajaxData && ajaxData.tow}</h1>
+      <button onClick={() => dispatch({ type: 'Count/getAjax' })}>获取数据</button>
+      <h1>{asyncData && asyncData.one}</h1>
+      <button onClick={() => dispatch({ type: 'Count/asyncAjaxData' })} >获取async数据</button>
     </div>
   );
 }
@@ -28,7 +33,9 @@ function Count({ dispatch, value }) {
 function mapStateToProps(state) {
   return {
     props: state.Count,
-    value: state.Count.value
+    value: state.Count.value,
+    ajaxData: state.Count.data,
+    asyncData: state.Count.asyncData,
   };
 }
 

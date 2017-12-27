@@ -10,6 +10,8 @@
  * 
  */
 
+import { promiseAjax, asyncAjax } from '../services/promiseAjas';
+
 
 export default {
 
@@ -19,22 +21,33 @@ export default {
   // 该 Model 当前的状态
   state: {
     value: 0,
+    ajaxData: ''
   },
 
   // Action 处理器，处理同步动作
   reducers: {
     add(state, action) {
-      console.log(state, action);
       return {
         value: state.value + 1
       };
     },
     minus(state, action) {
-      console.log(state, action, 2);
       return {
         value: state.value - 1
       };
     },
+    getData(state, action) {
+      return {
+        ...state,
+        data: action.data.ajaxData.data,
+      }
+    },
+    asyncData(state, action) {
+      return {
+        ...state,
+        asyncData: action.asyncData.data,
+      }
+    }
   },
 
   // Action 处理器，处理异步动作
@@ -51,13 +64,31 @@ export default {
           page: xx
         }
       })
+    },
+
+    *getAjax({ }, action) {
+      const y = yield action.call(promiseAjas, { url: 'getdata.json' });
+      yield action.put({
+        type: 'getData',
+        data: {
+          ajaxData: y
+        },
+      });
+    },
+
+    *asyncAjaxData({ }, action) {
+      const z = yield action.call(asyncAjax, { url: 'getdata2.json' });
+      yield action.put({
+        type: 'asyncData',
+        asyncData: z
+      });
     }
   },
   subscriptions: {
     setup({ dispatch, history }) {
-      console.log(dispatch, history);
+      // console.log(dispatch, history);
       return history.listen(({ pathname, search }) => {
-        console.log(pathname, search);
+        // console.log(pathname, search);
         // const query = queryString.parse(search);
         // if (pathname === '/users') {
         //   dispatch({ type: 'fetch', payload: query });
