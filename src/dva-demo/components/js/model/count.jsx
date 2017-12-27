@@ -1,13 +1,15 @@
 /**
  * babel-polyfill 为支持Generator函数 
  * 
+ * 或在webpack.json 添加babel-plugin-transform-runtime 支持
+ * 
  * effects redux-saga https://github.com/dvajs/dva-knowledgemap
  *                    http://leonshi.com/redux-saga-in-chinese/
  * 
  * subscriptions  异步数据初始化
  * 
  */
-import 'babel-polyfill';
+
 
 export default {
 
@@ -37,7 +39,7 @@ export default {
 
   // Action 处理器，处理异步动作
   effects: {
-    *save({ payload: { page = 1 }  }, action) {
+    *save({ payload: { page = 1 } }, action) {
       console.log(page);
       const xx = yield action.call(a, {
         page
@@ -65,7 +67,7 @@ export default {
   },
 }
 
-function a({page}) {
+function a({ page }) {
   console.log(page, 11);
   const y = 3;
   return page + y;

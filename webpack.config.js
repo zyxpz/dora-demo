@@ -1,5 +1,4 @@
 var webpack = require('atool-build/lib/webpack');
-var babelpolyfill = require("babel-polyfill");
 
 module.exports = function (webpackConfig) {
 
@@ -17,6 +16,12 @@ module.exports = function (webpackConfig) {
       $: 'anima-yocto'
     })
   )
+
+  webpackConfig.module.loaders.some(function (loader) {
+    if (/babel/.test(loader.loader)) {
+      loader.query.plugins.push('transform-runtime');
+    }
+  });
 
   webpackConfig.plugins.some(function (plugin, i) {
     if ((plugin instanceof webpack.optimize.CommonsChunkPlugin) || plugin.constructor.name === 'CommonsChunkPlugin') {

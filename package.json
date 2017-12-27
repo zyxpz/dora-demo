@@ -17,6 +17,7 @@
     "@types/react-dom": "^16.0.3",
     "anima-yocto": "^2.0.2",
     "atool-build": "^1.0.2",
+    "babel-plugin-transform-runtime": "^6.23.0",
     "babel-polyfill": "^6.26.0",
     "dora": "^0.5.0",
     "dora-plugin-atool-build": "^0.4.1",
