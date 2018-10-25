@@ -5,7 +5,8 @@
     "app-redux": "./src/react-redux-demo/entry/app-redux.js",
     "dva-demo": "./src/dva-demo/entry/index.js",
     "ts-demo": "./src/ts-demo/entry/ts-demo.ts",
-    "ts-react": "./src/ts-react/entry/ts-react.tsx"
+    "ts-react": "./src/ts-react/entry/ts-react.tsx",
+    "c-index": "./src/test-carousel/index.js"
   },
   "scripts": {
     "start": "./node_modules/.bin/dora --plugins webpack,proxy",
@@ -34,6 +35,7 @@
     "tslint": "^5.8.0"
   },
   "dependencies": {
+    "mido-h5-carousel": "^1.0.1",
     "mockjs": "^1.0.1-beta3"
   }
 }
