@@ -67,7 +67,7 @@ export default {
     },
 
     *getAjax({ }, action) {
-      const y = yield action.call(promiseAjas, { url: 'getdata.json' });
+      const y = yield action.call(promiseAjax, { url: 'getdata.json' });
       yield action.put({
         type: 'getData',
         data: {
